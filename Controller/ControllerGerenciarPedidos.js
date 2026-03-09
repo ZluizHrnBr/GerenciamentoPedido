@@ -46,6 +46,27 @@ app.post('/order', async (req,res)=> {
     }
 });
 
+
+app.get('/order/list',  async (req,res) => {
+    try {
+
+        const Pedidos = await Order.findAll({
+            include: [{
+                model: Itens,
+                as: "items",
+                required: false
+            }]
+        });
+
+        return res.status(200).json(Pedidos)
+    }catch(error){
+        return res.status(400).json({
+            message: "Erro na requisição solicitada " + error
+        })
+    }
+})
+
+
 app.get('/order/:orderId', async (req,res) => {
     
     try{
@@ -68,10 +89,6 @@ app.get('/order/:orderId', async (req,res) => {
         })
     }
    
-})
-
-app.get('/ListarTodosPedidos', (req,res) => {
-
 })
 
 app.put('/AtualizarPedido/:orderId', (req,res) =>{
