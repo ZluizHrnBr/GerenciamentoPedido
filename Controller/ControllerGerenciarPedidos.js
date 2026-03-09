@@ -4,7 +4,7 @@ const database = require('./Models/database')
 
 const app = express()
 
-app.use(BodyParser.json)
+app.use(BodyParser.json())
 
 app.post('/CriarNovoPedido', (req,res)=> {
 
