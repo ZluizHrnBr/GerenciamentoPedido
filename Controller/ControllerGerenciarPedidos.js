@@ -46,8 +46,28 @@ app.post('/order', async (req,res)=> {
     }
 });
 
-app.get('/ObterDadosPedido/:orderId', (req,res) => {
+app.get('/order/:orderId', async (req,res) => {
     
+    try{
+        const Pedido = await Order.findOne({
+            where: {
+                orderId: req.params.orderId
+            },
+
+            include: [{
+                model: Itens,
+                as: "items"
+            }]
+        })
+
+        return res.status(200).json(Pedido);
+    
+    }catch(error){
+        res.status(404).json({
+            message: "Recurso requisitado não encontrado !" + error
+        })
+    }
+   
 })
 
 app.get('/ListarTodosPedidos', (req,res) => {
