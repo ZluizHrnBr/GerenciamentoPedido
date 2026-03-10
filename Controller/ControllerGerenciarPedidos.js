@@ -95,8 +95,28 @@ app.put('/AtualizarPedido/:orderId', (req,res) =>{
 
 })
 
-app.delete('/DeletarPedido/:orderId', (req, res) => {
+app.delete('/order/:orderId', async (req, res) => {
+    try{
 
+        const PedidoDeleted = await Order.destroy({
+            where: {
+                orderId: req.params.orderId
+            }
+        })
+        if (PedidoDeleted){
+            return res.status(200).json({
+                message: "O pedido foi deletado com sucesso"
+            })
+        }else{
+            return res.status(400).json({
+                message: "Pedido não encontrado."
+            })
+        }
+    }catch(erro){
+        return res.status(500).json({
+            message: "Erro ao processar a solicitação para deletar o pedido."
+        })
+    }
 })
 
 database.sync().then(() => {
