@@ -33,6 +33,17 @@ Cria um novo pedido no sistema.
 | itens.quantidade  | number  | Quantidade do produto              |
 | itens.precoUnitario | number | Preço unitário do produto         |
 
+
+**Documentação da API**
+
+<img width="1918" height="1021" alt="Captura do Postman 1" src="https://github.com/user-attachments/assets/9bcef7f8-31d4-4968-a848-575e9f14b764" />
+
+<img width="1918" height="1021" alt="Captura do Postman 2" src="https://github.com/user-attachments/assets/2f652bbc-3727-4f54-8b9d-88c025785549" />
+
+<img width="1918" height="1020" alt="Captura do Postman 3" src="https://github.com/user-attachments/assets/c4c5317c-05b3-488b-8a7f-4a074d9fb695" />
+
+<img width="1918" height="1021" alt="Captura do Postman 4" src="https://github.com/user-attachments/assets/c32f0ac4-b3d2-488c-8a6f-011af7d830b1" />
+
 **Exemplo de Body:**
 ```json
 {
@@ -107,7 +118,6 @@ DELETE /orders/:id
   "message": "Pedido deletado com sucesso",
 }
 <img width="1918" height="1021" alt="Captura do Postman 4" src="https://github.com/user-attachments/assets/c32f0ac4-b3d2-488c-8a6f-011af7d830b1" />
-
 
 
 
