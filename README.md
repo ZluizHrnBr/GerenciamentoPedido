@@ -33,7 +33,7 @@ Cria um novo pedido no sistema.
 | itens.quantidade  | number  | Quantidade do produto              |
 | itens.precoUnitario | number | Preço unitário do produto         |
 
---
+---
 # Documentação da API
 
 <img width="1918" height="1021" alt="Captura do Postman 1" src="https://github.com/user-attachments/assets/9bcef7f8-31d4-4968-a848-575e9f14b764" />
